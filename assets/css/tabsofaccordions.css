@@ -22,6 +22,42 @@
     margin: 0;
 }
 
+html {
+    background-color: #585858;
+}
+
+
+/* For Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #585858 #757575;
+}
+
+
+/* For Chrome, Edge, and Safari*/
+
+*::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: #585858;
+    border-left: 1px solid #333333;
+    /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #757575;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid transparent;
+    background-clip: content-box;
+    /* creates padding around scroll thumb */
+}
+
 a {
     text-decoration: none !important;
 }
@@ -32,10 +68,6 @@ header {
     left: 0;
     right: 0;
     z-index: 999;
-}
-
-header {
-    font-family: -apple-system, system-ui, "Helvetica Neue", "Segoe UI", Tahoma, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Open Sans", sans-serif;
 }
 
 body {
@@ -138,25 +170,22 @@ header .header-container .page-links a:hover {
 main {
     display: flex;
     width: 100%;
-    /* position: relative;
-    top: var(--header-height); */
     background-color: var(--primary-main);
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    /* position: fixed; */
-    left: 0;
-    /* top: var(--header-height); */
     width: 75%;
-    background: var(--primary-main);
     color: var(--primary-light);
-    min-height: 100vh;
+    position: relative;
+    left: 0;
+    background-color: inherit;
 }
 
 .right-bar {
     display: flex;
+    flex-direction: column;
     position: fixed;
     right: 0;
     top: var(--header-height);
@@ -164,23 +193,26 @@ main {
     min-height: 100vh;
     background-color: var(--right-side-bar);
     padding: 0 8px;
-    z-index: 100;
+    z-index: 1000;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    max-height: calc(100vh - 60px);
 }
 
 .content .tab-container {
-    width: 100%;
     display: flex;
+    flex-direction: column;
     position: relative;
     top: var(--tab-header-height);
-    overflow: scroll;
+    bottom: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-right: 1px solid #333333;
+    max-height: calc(100vh - 9rem);
 }
 
 .content .tab-content {
     display: flex;
-    overflow: visible;
-    /* position: fixed; */
-    /* top: var(--tab-header-height); */
-    /* z-index: 10; */
 }
 
 .right-bar .adverts {
@@ -188,7 +220,6 @@ main {
     width: 100%;
     background: var(--right-side-bar);
     padding-top: var(--tab-header-height);
-    overflow-y: scroll;
 }
 
 .adverts a {
@@ -201,6 +232,7 @@ main {
 
 .tab-bar {
     display: flex;
+    justify-content: flex-start;
     width: 100%;
     background: var(--primary-dark);
     color: var(--primary-light);
@@ -209,8 +241,8 @@ main {
     line-height: var(--tab-header-height);
     position: fixed;
     top: var(--header-height);
-    overflow: hidden;
-    z-index: 10;
+    z-index: 1000;
+    padding-left: 8px;
 }
 
 .tab-bar .tab-links {
@@ -315,11 +347,6 @@ main {
 .bottom-button .setting:hover {
     background-color: var(--primary-button);
 }
-
-
-/* .collapsible .coll-header-text.active {
-  
-} */
 
 .setting-icon {
     font-size: 24px;
