@@ -62,8 +62,6 @@
         }
         
         html {
-            overflow: -moz-scrollbars-vertical;
-            overflow-y: scroll;
             background-color: #585858;
         }
         
@@ -72,7 +70,7 @@
             text-decoration: none solid rgb(0, 0, 0);
         }
         
-        * a {
+        a {
             text-decoration: none !important;
             color: var(--primary-light);
         }
@@ -202,10 +200,10 @@
             background: #383838;
             position: fixed;
             top: 0;
-            bottom: 0;
             right: 0;
             overflow-y: auto;
             overscroll-behavior: contain;
+            max-height: calc(100vh - 60px);
             z-index: 100;
         }
         
@@ -233,8 +231,9 @@
         .left-content {
             display: flex;
             flex-direction: column;
-            position: relative;
-            top: 47px;
+            position: fixed;
+            top: 105px;
+            width: 100%;
             overflow-y: auto;
             overscroll-behavior: contain;
             border-right: 1px solid #333333;
@@ -249,17 +248,20 @@
         }
         
         section .right {
-            padding: 45px 16px;
+            padding: 45px 0px;
             min-height: 400vh;
             color: var(--primary-light);
         }
         
-        .right-side .adverts {
+        .right-bar .adverts {
             position: relative;
-            padding: 45px 0px;
             width: 100%;
             background: var(--right-side-bar);
             padding-top: var(--tab-header-height);
+        }
+        
+        .adverts a {
+            color: var(--primary-light);
         }
         
         .adverts a:hover {
@@ -288,6 +290,8 @@
             display: flex;
             flex-direction: column;
             width: 100%;
+            position: relative;
+            top: 47px;
         }
         
         .tab-content .collapsible {
@@ -519,7 +523,7 @@
             <div id="content" class="left-content">
                 <div class="wrapper">
                     <section>
-                        <div class="left">
+                        <div class="left-content">
                             <div id="cash-out" class="tab-content">
                                 <!-- accordion list -->
                                 <div class="collapsible">
@@ -531,8 +535,8 @@
                                     <div class="accordion-grid">
                                         <div class="accordion-content">
                                             <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
+                                                <img src="./assets/images/open-circle.svg" alt="open circle">
+                                            </span>
                                             <div class="match-description">
                                                 <div class="match">
                                                     <h4 class="team-winner">
@@ -834,635 +838,19 @@
                             </div>
                             <!-- end of tab content -->
                             <div id="live-now" class="tab-content">
-                                <!-- accordion list -->
-                                <div class="collapsible">
-                                    <div class="coll-header-text">€5.00 9 Folds</div>
-                                    <div class="coll-header-button"></div>
-                                </div>
-                                <div class="accordion-container">
-                                    <!-- top panel -->
-                                    <div class="accordion-grid">
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- bottom panel  -->
-                                    <div class="accordion-bottom-panel">
-                                        <div class="left-bottom-content">
-                                            <span>Stake</span><span class="bottom-text">€5.00</span>
-                                        </div>
-                                        <div class="bottom-button">
-                                            <button class="cashout">Cash Out €5.00</button>
-                                            <button class="setting"><span class="setting-icon"><i class="fas fa-cog"></i></span></button>
-                                        </div>
-                                    </div>
-                                    <!-- end of bottom panel    -->
-                                </div>
+                                live now accordion
                                 <div class="left-divider"></div>
                             </div>
                             <div id="unsettled" class="tab-content">
-                                <!-- accordion list -->
-                                <div class="collapsible">
-                                    <div class="coll-header-text">€5.00 9 Folds</div>
-                                    <div class="coll-header-button"></div>
-                                </div>
-                                <div class="accordion-container">
-                                    <!-- top panel -->
-                                    <div class="accordion-grid">
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- bottom panel  -->
-                                    <div class="accordion-bottom-panel">
-                                        <div class="left-bottom-content">
-                                            <span>Stake</span><span class="bottom-text">€5.00</span>
-                                        </div>
-                                        <div class="bottom-button">
-                                            <button class="cashout">Cash Out €5.00</button>
-                                            <button class="setting"><span class="setting-icon"><i class="fas fa-cog"></i></span></button>
-                                        </div>
-                                    </div>
-                                    <!-- end of bottom panel    -->
-                                </div>
+                                unsettled accordion
                                 <div class="left-divider"></div>
                             </div>
                             <div id="settled" class="tab-content">
-                                <!-- accordion list -->
-                                <div class="collapsible">
-                                    <div class="coll-header-text">€5.00 9 Folds</div>
-                                    <div class="coll-header-button"></div>
-                                </div>
-                                <div class="accordion-container">
-                                    <!-- top panel -->
-                                    <div class="accordion-grid">
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- bottom panel  -->
-                                    <div class="accordion-bottom-panel">
-                                        <div class="left-bottom-content">
-                                            <span>Stake</span><span class="bottom-text">€5.00</span>
-                                        </div>
-                                        <div class="bottom-button">
-                                            <button class="cashout">Cash Out €5.00</button>
-                                            <button class="setting"><span class="setting-icon"><i class="fas fa-cog"></i></span></button>
-                                        </div>
-                                    </div>
-                                    <!-- end of bottom panel    -->
-                                </div>
+                                settled accordion
                                 <div class="left-divider"></div>
                             </div>
                             <div id="all" class="tab-content">
-                                <!-- accordion list -->
-                                <div class="collapsible">
-                                    <div class="coll-header-text">€5.00 9 Folds</div>
-                                    <div class="coll-header-button"></div>
-                                </div>
-                                <div class="accordion-container">
-                                    <!-- top panel -->
-                                    <div class="accordion-grid">
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-content">
-                                            <span class="status-icon">
-                                        <img src="./assets/images/open-circle.svg" alt="open circle">
-                                    </span>
-                                            <div class="match-description">
-                                                <div class="match">
-                                                    <h4 class="team-winner">
-                                                        Jaume Munar
-                                                    </h4>
-                                                    <p>To Win Match
-                                                        <p>
-                                                            <a href="#">
-                                                                <p>Vit Kopriva vs Jaume Munar Thur 1 Apr 16:30
-                                                                    <p>
-                                                            </a>
-                                                </div>
-                                                <span class="match-odd">1.14</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- bottom panel  -->
-                                    <div class="accordion-bottom-panel">
-                                        <div class="left-bottom-content">
-                                            <span>Stake</span><span class="bottom-text">€5.00</span>
-                                        </div>
-                                        <div class="bottom-button">
-                                            <button class="cashout">Cash Out €5.00</button>
-                                            <button class="setting"><span class="setting-icon"><i class="fas fa-cog"></i></span></button>
-                                        </div>
-                                    </div>
-                                    <!-- end of bottom panel    -->
-                                </div>
+                                all accordion
                                 <div class="left-divider"></div>
                             </div>
 

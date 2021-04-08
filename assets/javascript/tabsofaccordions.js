@@ -16,72 +16,72 @@ coll = document.getElementsByClassName("collapsible");
 
 tabcontent = document.getElementsByClassName("tab-content");
 for (i = 0; i < tabcontent.length; i++) {
-  tabcontent[i].style.display = "none";
+    tabcontent[i].style.display = "none";
 }
 tablinks = document.getElementsByClassName("tab-links");
 for (i = 0; i < tablinks.length; i++) {
-  tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
 }
 
 for (i = 0; i < tablinks.length; i++) {
-  tablinks[i].addEventListener("click", function (evt) {
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tab-links");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    if (evt.currentTarget.innerText === "Cash Out") {
-      document.getElementById("cash-out").style.display = "flex";
-    }
-    if (evt.currentTarget.innerText === "Live Now") {
-      document.getElementById("live-now").style.display = "flex";
-    }
-    if (evt.currentTarget.innerText === "Unsettled") {
-      document.getElementById("unsettled").style.display = "flex";
-    }
-    if (evt.currentTarget.innerText === "Settled") {
-      document.getElementById("settled").style.display = "flex";
-    }
-    if (evt.currentTarget.innerText === "All") {
-      document.getElementById("all").style.display = "flex";
-    }
-    evt.currentTarget.className += " active";
-  });
+    tablinks[i].addEventListener("click", function(evt) {
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab-links");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        if (evt.currentTarget.innerText === "Cash Out") {
+            document.getElementById("cash-out").style.display = "block";
+        }
+        if (evt.currentTarget.innerText === "Live Now") {
+            document.getElementById("live-now").style.display = "block";
+        }
+        if (evt.currentTarget.innerText === "Unsettled") {
+            document.getElementById("unsettled").style.display = "block";
+        }
+        if (evt.currentTarget.innerText === "Settled") {
+            document.getElementById("settled").style.display = "block";
+        }
+        if (evt.currentTarget.innerText === "All") {
+            document.getElementById("all").style.display = "block";
+        }
+        evt.currentTarget.className += " active";
+    });
 }
 
 function handleParent(e) {
-  // console.log(e.currentTarget);
+    // console.log(e.currentTarget);
 }
 
 function handleButtonChild(e) {
-  // e.stopPropagation();
-  // console.log(e.currentTarget);
+    // e.stopPropagation();
+    // console.log(e.currentTarget);
 }
 
 function handleTextChild(e) {
-  // e.stopPropagation();
-  // console.log(e.currentTarget);
+    // e.stopPropagation();
+    // console.log(e.currentTarget);
 }
 
 for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener(
-    "click",
-    function (e) {
-      //console.log(this.children);
-      this.classList.toggle("active");
-      this.children[1].classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    },
-    true
-  );
+    coll[i].addEventListener(
+        "click",
+        function(e) {
+            //console.log(this.children);
+            this.classList.toggle("active");
+            this.children[1].classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        },
+        true
+    );
 }
 
 // function handleMouseOver() {
