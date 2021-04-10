@@ -49,3 +49,13 @@ for (let i = 0; i < tablinks.length; i++) {
         evt.currentTarget.className += " active";
     });
 }
+
+var btn = document.getElementById("menuId");
+var mainContainer = document.getElementById("main");
+var slideMenu = document.getElementById("slideMenu");
+
+btn.addEventListener("click", function() {
+    btn.classList.toggle("active");
+    main.classList.toggle("moveToRight");
+    slideMenu.classList.toggle("active");
+});
